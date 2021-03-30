@@ -360,3 +360,4 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+obj/Debug/netstandard2.1/RazorDeclaration/Pages/Den.razor.g.cs

@@ -1,0 +1,62 @@
+﻿@page "/db"
+
+<EditForm Model="@exampleModel" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <InputText id="name" @bind-Value="exampleModel.Name" />
+    <InputText id="password" @bind-Value="exampleModel.Password" />
+
+    <button type="submit">Submit</button>
+</EditForm>
+
+
+<hr />
+<table border="1">
+    <tr>
+        <td>Name</td>
+        <td>Password</td>
+    </tr>
+    @foreach (var us in users)
+            {
+                <tr>
+                    <td>@us.Name</td>
+                    <td>@us.Password</td>
+                </tr>
+            }
+</table>
+
+
+
+@code {
+
+    private ExampleModel exampleModel = new ExampleModel();
+    private List<User> users = new List<User>();
+
+    private void HandleValidSubmit()
+    {
+        users.Add(new User(exampleModel.Name, exampleModel.Password));
+    }
+
+    public class User
+    {
+        public string Name { get; set; }
+        public string Password { get; set; }
+
+        public User(string Name, string Password)
+        {
+            this.Name = Name;
+            this.Password = Password;
+        }
+    }
+    public class ExampleModel
+    {
+        [Required]
+        [StringLength(10, ErrorMessage = "Name is too long.")]
+        public string Name { get; set; }
+
+        [Required]
+        [StringLength(20, ErrorMessage = "Password is too long.", MinimumLength = 5)]
+        public string Password { get; set; }
+    }
+}
