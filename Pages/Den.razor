@@ -1,0 +1,33 @@
+﻿@page "/Den"
+
+<h1>Random: @randomNum</h1>
+<button class="btn btn-primary" @onclick="RandomInt">Click me</button>
+<hr />
+<h1>
+    Info: @info
+</h1>
+<button class="btn btn-primary" @onclick="GetInfo">Get info</button>
+
+
+@code {
+    Random r = new Random();
+    private int randomNum = 0;
+
+    private string info = String.Empty;
+    private string uri = "http://undecimodia.pythonanywhere.com/api";
+
+    private void RandomInt()
+    {
+        randomNum = r.Next(0, 1000);
+    }
+
+    private void GetInfo()
+    {
+        HttpClient client = new HttpClient();
+        var res = client.GetAsync(uri);
+        dynamic information = JsonConvert.DeserializeObject(Convert.ToString(res.Result));
+        info = $"Name: {information.name}\n";
+        Thread.Sleep(5000);
+        info += $"Balance: ${information.balance}";
+    }
+}
