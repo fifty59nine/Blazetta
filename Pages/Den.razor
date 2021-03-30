@@ -1,10 +1,12 @@
 ﻿@page "/Den"
+@inject HttpClient Http
 
 <h1>Random: @randomNum</h1>
 <button class="btn btn-primary" @onclick="RandomInt">Click me</button>
 <hr />
 <h1>
-    Info: @info
+    Info: <br />
+    @info
 </h1>
 <button class="btn btn-primary" @onclick="GetInfo">Get info</button>
 
@@ -21,13 +23,17 @@
         randomNum = r.Next(0, 1000);
     }
 
-    private void GetInfo()
+    private async Task GetInfo()
     {
-        HttpClient client = new HttpClient();
-        var res = client.GetAsync(uri);
-        dynamic information = JsonConvert.DeserializeObject(Convert.ToString(res.Result));
-        info = $"Name: {information.name}\n";
-        Thread.Sleep(5000);
-        info += $"Balance: ${information.balance}";
+        User user;
+        user = await Http.GetFromJsonAsync<User>("sample-data/user.json");
+        info = $"Name: {user.Name}";
+        info += $"Balance: ${user.Balance}";
+    }
+
+    class User
+    {
+        public string Name { get; set; }
+        public int Balance { get; set; }
     }
 }

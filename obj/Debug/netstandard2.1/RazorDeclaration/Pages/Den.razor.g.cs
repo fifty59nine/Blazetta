@@ -105,7 +105,7 @@ using System.Dynamic;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 12 "C:\Users\Den4ik\source\repos\Blazetta\Blazetta\Pages\Den.razor"
+#line 14 "C:\Users\Den4ik\source\repos\Blazetta\Blazetta\Pages\Den.razor"
        
     Random r = new Random();
     private int randomNum = 0;
@@ -118,19 +118,24 @@ using System.Dynamic;
         randomNum = r.Next(0, 1000);
     }
 
-    private void GetInfo()
+    private async Task GetInfo()
     {
-        HttpClient client = new HttpClient();
-        var res = client.GetAsync(uri);
-        dynamic information = JsonConvert.DeserializeObject(Convert.ToString(res.Result));
-        info = $"Name: {information.name}\n";
-        Thread.Sleep(5000);
-        info += $"Balance: ${information.balance}";
+        User user;
+        user = await Http.GetFromJsonAsync<User>("sample-data/user.json");
+        info = $"Name: {user.Name}";
+        info += $"Balance: ${user.Balance}";
+    }
+
+    class User
+    {
+        public string Name { get; set; }
+        public int Balance { get; set; }
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }
     }
 }
 #pragma warning restore 1591
