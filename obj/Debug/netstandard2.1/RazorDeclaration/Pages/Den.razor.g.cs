@@ -115,7 +115,7 @@ using System.Dynamic;
 
     private void RandomInt()
     {
-        randomNum = r.Next(0, 1000);
+        randomNum = r.Next(0, 10000);
     }
 
     private async Task GetInfo()

@@ -358,6 +358,6 @@ C:\Users\Den4ik\source\repos\Blazetta\Blazetta\obj\Debug\netstandard2.1\Blazetta
 C:\Users\Den4ik\source\repos\Blazetta\Blazetta\obj\Debug\netstandard2.1\RazorDeclaration\Pages\Den.razor.g.cs
 C:\Users\Den4ik\source\repos\Blazetta\Blazetta\obj\Debug\netstandard2.1\Razor\Pages\Den.razor.g.cs
 C:\Users\Den4ik\source\repos\Blazetta\Blazetta\bin\Debug\netstandard2.1\Newtonsoft.Json.dll
-C:\Users\Den4ik\source\repos\Blazetta\Blazetta\obj\Debug\netstandard2.1\integrity\XbrQM8xpD-7s4TnkGuvO5rjorvsIJ8WtnSxbEYjWKjY=.hash
-C:\Users\Den4ik\source\repos\Blazetta\Blazetta\obj\Debug\netstandard2.1\integrity\IXH-D_hHyCvVyvsYOytrYk2PBxMmgRWvaVRcDgdnjSY=.hash
-C:\Users\Den4ik\source\repos\Blazetta\Blazetta\obj\Debug\netstandard2.1\integrity\JnslwjS4aByJt99uirkgcBHDnYyk07tjhCIFg9eoPWw=.hash
+C:\Users\Den4ik\source\repos\Blazetta\Blazetta\obj\Debug\netstandard2.1\integrity\zStRTiJOx_yTLyoeMAyOZ2cxxlOzIr_Y8Ly_FXrnxas=.hash
+C:\Users\Den4ik\source\repos\Blazetta\Blazetta\obj\Debug\netstandard2.1\integrity\Tdsb7o5M4YgKomD_5CoKUcltk8npXFKaeCGuypYyR-I=.hash
+C:\Users\Den4ik\source\repos\Blazetta\Blazetta\obj\Debug\netstandard2.1\integrity\FeqbaY5L4kbJ3HsG5_tFYufapzz0NwBDt0HmjJlF_EU=.hash
